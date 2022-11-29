@@ -33,12 +33,12 @@
   <!-- Examples: -->
   <!-- Use depend as a shortcut for packages that are both build and exec dependencies -->
   <!--   <depend>roscpp</depend> -->
-  <depend> ros-noetic-gazebo-ros </depend>
-  <depend> ros-noetic-gazebo-ros-control </depend>
-  <depend> ros-noetic-ros-control </depend>
-  <depend> ros-noetic-ros-controllers </depend>
-  <depend> ros-noetic-pr2-gazebo </depend>
-  <depend> ros-noetic-move-base </depend>
+  <depend> gazebo_ros </depend>
+  <depend> gazebo_ros_control </depend>
+  <depend> ros_control </depend>
+  <depend> ros_controllers </depend>
+  <depend> pr2_gazebo </depend>
+  <depend> move_base </depend>
   <!--   Note that this is equivalent to the following: -->
   <!--   <build_depend>roscpp</build_depend> -->
   <!--   <exec_depend>roscpp</exec_depend> -->
