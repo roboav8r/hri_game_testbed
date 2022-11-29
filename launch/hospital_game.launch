@@ -1,0 +1,43 @@
+<launch>
+  <!-- Launch World -->
+  <arg name="gui" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find hri_games)/worlds/hospital_empty.world"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="$(arg gui)"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="true"/>
+  </include>
+
+  <!-- Add robot to world -->
+  <!-- Convert an xacro and put on parameter server -->
+  <param name="robot_description" command="xacro --inorder $(find pr2_description)/robots/pr2.urdf.xacro" />
+
+  <!-- Spawn a robot into Gazebo -->
+  <arg name="KINECT1" default="true" />
+  <arg name="KINECT2" default="true" />
+
+  <!-- send pr2 urdf to param server -->
+  <include file="$(find pr2_description)/robots/upload_pr2.launch" pass_all_args="true" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="10"/>
+  <arg name="z" default="0.1"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/> 
+  <node name="spawn_pr2_model" pkg="gazebo_ros" type="spawn_model" 
+  args=" -unpause -urdf -param robot_description -model pr2 -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" 
+  respawn="false" output="screen" />
+
+  <!-- default bringup script -->
+  <include file="$(find pr2_gazebo)/launch/pr2_bringup.launch" />
+
+  <!-- Load and Start Default Controllers -->
+  <include file="$(find pr2_controller_configuration_gazebo)/launch/pr2_default_controllers.launch" />
+</launch>
