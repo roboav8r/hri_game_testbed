@@ -14,3 +14,6 @@ This is intended to be a drop-in replacement for an actual robot, with similar i
 # Acknowledgements
 The hospital world is a variant of Amazon Robotics' robomaker world, originally found here:
 https://github.com/aws-robotics/aws-robomaker-hospital-world 
+
+A large collection of other Gazebo worlds is available here:
+https://github.com/chaolmu/gazebo_models_worlds_collection 
