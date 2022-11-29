@@ -3,7 +3,7 @@
   <arg name="gui" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find hri_games)/worlds/hospital_empty.world"/>
+    <arg name="world_name" value="$(find hri_game_testbed)/worlds/hospital_empty.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="$(arg gui)"/>
