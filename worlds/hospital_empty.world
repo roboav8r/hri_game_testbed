@@ -3,7 +3,7 @@
   <world name="world">
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>0.36148 26.3458 14.9739 0 0.563643 -1.551</pose>
+        <pose>0.125762 -5.5539 23.6437 -0 0.999643 1.55219</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1142,11 +1142,14 @@
       </include>
     </model>
 
+  </world>
+</sdf>
+
     <!-- Usage: modify the <pose> elements of each actor to change their
          starting location. Modify the <target> elements of each actor to
          change their destination. The <target_weight> can be used to
          tune the vector field used by the ActorPlugin to control the Actor. -->
-    <actor name="actor1">
+    <!-- <actor name="actor1">
       <pose>0 1 1.25 0 0 0</pose>
       <skin>
         <filename>file://media/models/walk.dae</filename>
@@ -1213,8 +1216,4 @@
         <xyzOffsets>0 0 0</xyzOffsets>
         <rpyOffsets>0 0 0</rpyOffsets>
       </plugin>
-    </actor>
-
-
-  </world>
-</sdf>
+    </actor> -->

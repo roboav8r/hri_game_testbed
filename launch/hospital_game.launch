@@ -1,9 +1,10 @@
 <launch>
   <!-- Launch World -->
   <arg name="gui" default="true"/>
+  <arg name="level" default="hospital_empty" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find hri_game_testbed)/worlds/hospital_empty.world"/>
+    <arg name="world_name" value="$(find hri_game_testbed)/worlds/$(arg level).world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="$(arg gui)"/>
